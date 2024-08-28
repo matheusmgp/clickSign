@@ -9,14 +9,14 @@ using SolAgora.External.ClickSign.Domain.ValueObject;
 namespace SolAgora.External.ClickSign.Api.Controllers;
 
 [Route("click-sign")]
+[AllowAnonymous]
 [ApiController]
 public class ClickSignController(
     ICreateEnvelopeUseCase createEnvelopeUseCase,
     ICreateDocumentUseCase createDocumentUseCase,
     ICreateSignatoryUseCase createSignatoryUseCase) : ControllerBase
 {
-    [HttpPost("envelope")]
-    [AllowAnonymous]
+    [HttpPost("envelope")]   
     [ProducesResponseType(typeof(CreateEnvelopeResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(CustomErrorResponse), StatusCodes.Status422UnprocessableEntity)]
     [ProducesResponseType(typeof(CustomErrorFrameworkResponse), StatusCodes.Status500InternalServerError)]
@@ -27,7 +27,6 @@ public class ClickSignController(
     }
 
     [HttpPost("/{envelopeId}/document")]
-    [AllowAnonymous]
     [ProducesResponseType(typeof(CreateDocumentResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(CustomErrorResponse), StatusCodes.Status422UnprocessableEntity)]
     [ProducesResponseType(typeof(CustomErrorFrameworkResponse), StatusCodes.Status500InternalServerError)]
@@ -38,7 +37,6 @@ public class ClickSignController(
     }
 
     [HttpPost("/{envelopeId}/signatory")]
-    [AllowAnonymous]
     [ProducesResponseType(typeof(CreateSignatoryResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(CustomErrorResponse), StatusCodes.Status422UnprocessableEntity)]
     [ProducesResponseType(typeof(CustomErrorFrameworkResponse), StatusCodes.Status500InternalServerError)]
