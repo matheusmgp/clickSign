@@ -1,0 +1,6 @@
+@SolAgora.External.ClickSign_HostAddress = http://localhost:5192
+
+GET {{SolAgora.External.ClickSign_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
