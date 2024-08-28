@@ -16,7 +16,7 @@ public class ClickSignController(
     ICreateDocumentUseCase createDocumentUseCase,
     ICreateSignatoryUseCase createSignatoryUseCase) : ControllerBase
 {
-    [HttpPost("envelope")]   
+    [HttpPost("envelope")]
     [ProducesResponseType(typeof(CreateEnvelopeResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(CustomErrorResponse), StatusCodes.Status422UnprocessableEntity)]
     [ProducesResponseType(typeof(CustomErrorFrameworkResponse), StatusCodes.Status500InternalServerError)]
