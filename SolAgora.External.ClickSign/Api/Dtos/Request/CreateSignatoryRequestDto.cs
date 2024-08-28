@@ -24,13 +24,5 @@ public class SignatoryAttributes
     public string Name { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;  
     public string Documentation { get; set; } = string.Empty;
-
-   // public SignatoryCommunicateEvents CommunicateEvents { get; set; } = new();
 }
 
-public class SignatoryCommunicateEvents
-{
-    public string DocumentSigned { get; set; } = string.Empty;
-    public string SignatureRequest { get; set; } = string.Empty;
-    public string SignatureReminder { get; set; } = string.Empty;
-}

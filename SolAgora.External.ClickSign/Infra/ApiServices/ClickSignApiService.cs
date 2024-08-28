@@ -22,7 +22,6 @@ public class ClickSignApiService(HttpClient httpClient) : ApiServiceBase(httpCli
     public async Task<CreateDocumentResponseDto> CreateDocumentAsync(Guid envelopeId, CreateDocumentRequestDto request, CancellationToken cancellation)
     {
         var uri = $"envelopes/{envelopeId}/documents/";
-
         var newRequest = MakeDocumentRequestBody(request);
 
         var response = await _httpClient.PostAsJsonAsync(uri, newRequest, cancellation);
@@ -36,7 +35,6 @@ public class ClickSignApiService(HttpClient httpClient) : ApiServiceBase(httpCli
     public async Task<CreateSignatoryResponseDto> CreateSignatoryAsync(Guid envelopeId, CreateSignatoryRequestDto request, CancellationToken cancellation)
     {
         var uri = $"envelopes/{envelopeId}/signers/";
-
         var newRequest = MakeSignatoryRequestBody(request);
 
         var response = await _httpClient.PostAsJsonAsync(uri, newRequest, cancellation);

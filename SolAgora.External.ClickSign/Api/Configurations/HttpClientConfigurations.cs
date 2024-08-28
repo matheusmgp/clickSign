@@ -1,6 +1,4 @@
-﻿using System.Net.Http;
-using Microsoft.AspNetCore.Http;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using SolAgora.External.ClickSign.Api.Extensions;
 using SolAgora.External.ClickSign.Api.Handlers;
 using SolAgora.External.ClickSign.Infra.ApiServices;
@@ -20,7 +18,6 @@ public static class HttpClientConfigurations
         {
             client.BaseAddress = new Uri(baseAddress);
             client.DefaultRequestHeaders.Add(TokenIdHeader, authorizationToken);
-            //client.DefaultRequestHeaders.ContentType = new MediaTypeHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         })
         .AddRetryPolicy()
